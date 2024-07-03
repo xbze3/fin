@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    background-image: url('images/graBackground.webp');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+}
+
+#formDiv {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    
+}
+
+#form {
+    padding: 10px 20px 10px 20px;
+
+}
+
+#form > input {
+    margin: 10px;
+    padding: 8px 0px 8px 20px;
+    width: 300px;
+    border: 0px;
+    border-radius: 20px;
+}
+
+#form > button {
+    background-color: rgb(155, 155, 155);
+    padding: 10px 30px 10px 30px;
+    margin: 10px 0px 0px 0px;
+    border-radius: 20px;
+    border: 0px;
+    color: white;
+    font-weight: bold;
+}
+
+#form > button:hover {
+    cursor: pointer;
+    background-color: rgb(128, 255, 128);
+    transition: 0.3s ease;
+}
+
+
+#logoDiv {
+    display: flex;
+    align-items: center;
+    
+}
+
+#graLogo {
+    width: 200px;
+    
+
+}
+
+@media screen and (max-width: 630px){ 
+    #logoDiv {
+        display: none;
+    }
+}

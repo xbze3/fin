@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>GRA WiFi Portal</title>
+</head>
+<body>
+    <div id="app">
+        <div id="formDiv">
+            <div id="logoDiv">
+                <img src="images/graLOGO.jpg" alt="Logo" id="graLogo">
+            </div>
+            <form action="" id="form">
+                <h2>GRA WiFi Portal</h2>
+                <input type="text" placeholder="WiFi Password" v-model="input">
+                <br>
+                <button @click.prevent="submitPassword">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        let app = Vue.createApp({
+            data() {
+                return {
+                    input: ''
+                }
+            },
+            methods: {
+                async submitPassword() {
+                    const response = await fetch(`http://127.0.0.1:5000/joinNetwork/${this.input}`)
+                    const tempData = await response.json()
+                    this.data = tempData.processedData
+                    console.log(this.data)
+                }
+            }
+        })
+
+        app.mount('#app')
+    </script>
+</body>
+</html>

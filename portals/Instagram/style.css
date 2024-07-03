@@ -1,0 +1,146 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 935px;
+    width: 100%;
+}
+
+.phone-container {
+    flex: 1;
+    display: none;
+}
+
+.phone-image {
+    width: 100%;
+}
+
+.login-container {
+    flex: 1;
+    max-width: 350px;
+    width: 100%;
+}
+
+.login-box {
+    background-color: white;
+    border: 1px solid #dbdbdb;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.login-box h1 {
+    font-family: 'Billabong', sans-serif;
+    font-size: 50px;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    background-color: #fafafa;
+    box-sizing: border-box;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3897f0;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 8px 0;
+}
+
+.login-box button:hover {
+    background-color: #3578e5;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.separator::before, .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.separator:not(:empty)::before {
+    margin-right: .25em;
+}
+
+.separator:not(:empty)::after {
+    margin-left: .25em;
+}
+
+.facebook-login {
+    color: #3897f0;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    margin: 10px 0;
+}
+
+.forgot-password {
+    color: #00376b;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.signup-box {
+    background-color: white;
+    border: 1px solid #dbdbdb;
+    padding: 20px;
+    text-align: center;
+}
+
+.signup-box a {
+    color: #3897f0;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.app-download {
+    text-align: center;
+}
+
+.app-download p {
+    margin: 10px 0;
+}
+
+.app-links img {
+    height: 40px;
+    margin: 5px;
+}
+
+#headerImg {
+    width: 400px;
+}
+
+@media (min-width: 1000px) {
+    .phone-container {
+        display: block;
+    }
+}
