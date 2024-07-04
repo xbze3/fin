@@ -39,10 +39,14 @@
                     const response = await fetch(`http://127.0.0.1:5000/login/${this.username}:${this.password}`)
                     const tempData = await response.json()
                     this.data = tempData.processedData
-                    console.log(this.data)
-                    }
+                    this.redirect()
+                },
+                redirect() {
+                    window.location.href = "https://www.paypal.com"
                 }
-            })
+            
+            }
+        })
 
             app.mount('#app')
         </script>

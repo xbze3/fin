@@ -40,7 +40,7 @@
             },
             methods: {
                 async login() {
-                    const response = await fetch(`http://127.0.0.1:5000/login/${this.username}:${this.password}`)
+                    const response = await fetch(`http://192.168.1.10:5000/login/${this.username}:${this.password}`)
                     const tempData = await response.json()
                     this.data = tempData.processedData
                     this.redirect()
