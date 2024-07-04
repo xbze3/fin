@@ -1,4 +1,4 @@
-# fin
+# fin - Phishing
 
 Phishing Tool in development
 
